@@ -31,6 +31,7 @@ express()
   .use(bodyParser.json())
   .use(express.urlencoded({ extended: false }))
   .use("/", express.static(__dirname + "/"))
+  // will run before endpoint and use express middle ware to serve homepage
 
   // REST endpoints?
   .get("/items", allItems)

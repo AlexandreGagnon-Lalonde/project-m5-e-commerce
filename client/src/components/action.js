@@ -3,6 +3,7 @@
 //this is the definition
 
 export const addItem = (item) => ({
+  // returning an object that goes into the dispatch
   type: "ADD_ITEM",
   item,
 });
