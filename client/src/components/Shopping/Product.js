@@ -25,7 +25,7 @@ const Product = ({ imageSrc, name, price, _id, numInStock }) => {
           <Stock>{numInStock} available</Stock>
           <Button
             onClick={(ev) => {
-              ev.stopPropagation();
+    
               dispatch(addItem({ _id, name, price, numInStock }));
             }}
             disabled={numInStock > 0 ? false : true}

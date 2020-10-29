@@ -2,9 +2,8 @@ const initialState = {};
 
 // in component we call a dispatch that is given an action and then reducer executes that action
 export const getCartItemArray = (state) => Object.values(state.cart);
-// but we want to select the state as an _array_ of items, so that we can map through them in our React component.
-//so we can update cart
-//getStoreItemArray gets put into cart
+//THE CART ARRAY WILL BE MADE WITH VALUES OF THE CART
+//getCartItemArray gets put into cart
 // keep selector functions _colocated_ with the reducers.
 //USE REDUCERS TO CHANGE THE STATE
 export default function cartReducer(state = initialState, action) {
@@ -13,12 +12,15 @@ export default function cartReducer(state = initialState, action) {
       return {
         ...state,
         [action.item._id]: {
+          //KEY: VALUE
           //state contains a bunch of items by id so item.id
           //adding above by id to whatever item already there thus ...action.item
           ...action.item,
           quantity: state[action.item._id]
             ? state[action.item._id].quantity + 1
             : 1,
+            //TERNIARY CHECKS IF IT EXISTS ALREADY 
+            //ADDS ONE TO EXISTING QUANTITY: ELSE QUANTITY 1
         },
       };
     }
@@ -37,6 +39,8 @@ export default function cartReducer(state = initialState, action) {
         [action.item._id]: {
           ...state[action.item._id],
           quantity: action.item.quantity,
+          //KEY: NEW VALUE
+          // WE ARE RECEIVING AN ACTION WITH .ITEM IN IT AND .QUANTITY IN THAT
         },
       };
     }

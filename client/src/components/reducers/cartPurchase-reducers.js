@@ -8,6 +8,7 @@ export default function cartPurchaseReducer(state = initialState, action) {
       return {
         ...state,
         status: "process",
+            //KEY: VALUE
       };
     }
     case "RECEIVE_PURCHASE": {

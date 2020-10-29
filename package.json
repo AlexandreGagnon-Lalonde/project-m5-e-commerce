@@ -1,6 +1,7 @@
 {
   "name": "bagelzproject",
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^5.9.2",
     "morgan": "^1.10.0",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5"
